@@ -6,12 +6,10 @@ import { useEffect } from "react";
 import { useColorScheme } from "react-native";
 import { RecoilRoot } from "recoil";
 
-export {
-	ErrorBoundary,
-} from "expo-router";
+export { ErrorBoundary } from "expo-router";
 
 export const unstable_settings = {
-	initialRouteName: "(tabs)",
+	initialRouteName: "(auth)",
 };
 
 export default function RootLayout() {
@@ -46,6 +44,7 @@ function RootLayoutNav() {
 			<ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
 				<Stack>
 					<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+					<Stack.Screen name="(auth)" options={{ headerShown: false }} />
 				</Stack>
 			</ThemeProvider>
 		</>
