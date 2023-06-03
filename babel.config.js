@@ -4,12 +4,14 @@ module.exports = function (api) {
 		presets: ["babel-preset-expo"],
 		plugins: [
 			require.resolve("expo-router/babel"),
-			require.resolve("babel-plugin-module-resolver"),
-			{
-				alias: {
-					"styles/*": "./styles/*",
+			[
+				require.resolve("babel-plugin-module-resolver"),
+				{
+					alias: {
+						styles: "./styles",
+					},
 				},
-			},
+			],
 		],
 	};
 };
