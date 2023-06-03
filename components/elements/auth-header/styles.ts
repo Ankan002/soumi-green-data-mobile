@@ -11,12 +11,12 @@ export const styles = StyleSheet.create({
 		height: 100,
 		resizeMode: "contain",
 	},
-    TitleText: {
-        marginTop: 5,
-        fontSize: 30,
-        fontWeight: "600",
-        letterSpacing: 5,
-        fontFamily: "SecularOne_400Regular",
-        textAlign: "center"
-    }
+	TitleText: {
+		marginTop: 5,
+		fontSize: 30,
+		fontWeight: "600",
+		letterSpacing: 5,
+		fontFamily: "SecularOne_400Regular",
+		textAlign: "center",
+	},
 });

@@ -6,5 +6,16 @@ export const SignInStyles = StyleSheet.create({
 		backgroundColor: "#EBF0DE",
 		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 		alignItems: "center",
+		paddingHorizontal: 15,
+	},
+	container: {
+		flex: 1,
+		marginVertical: 20,
+		alignItems: "center",
+		backgroundColor: "#C7F44D",
+		borderWidth: 2,
+		borderRadius: 40,
+		borderColor: "#000",
+		width: "100%",
 	},
 });
