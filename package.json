@@ -12,6 +12,9 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo-google-fonts/manrope": "^0.2.3",
+    "@expo-google-fonts/quicksand": "^0.2.3",
+    "@expo-google-fonts/secular-one": "^0.2.3",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
     "babel-plugin-module-resolver": "^5.0.0",

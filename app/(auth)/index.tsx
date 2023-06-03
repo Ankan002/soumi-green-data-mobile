@@ -1,6 +1,7 @@
+import { AuthHeader } from "components/elements";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Button, SafeAreaView } from "react-native"
+import { Button, SafeAreaView, View } from "react-native"
 import { SignInStyles } from "styles";
 
 const LoginScreen = () => {
@@ -8,6 +9,7 @@ const LoginScreen = () => {
 
     return (
         <SafeAreaView style={SignInStyles.screen} >
+            <AuthHeader />
             <StatusBar style="dark" />
         </SafeAreaView>
     )
