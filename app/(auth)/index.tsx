@@ -9,8 +9,8 @@ const LoginScreen = () => {
 	const router = useRouter();
 
 	return (
-		<SafeAreaView style={SignInStyles.screen}>
-			<View style={SignInStyles.container}>
+		<SafeAreaView style={SignInStyles.Screen}>
+			<View style={SignInStyles.Container}>
 				<AuthHeader />
 				<LoginContainer />
 			</View>

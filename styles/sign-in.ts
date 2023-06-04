@@ -1,14 +1,14 @@
 import { Platform, StatusBar, StyleSheet } from "react-native";
 
 export const SignInStyles = StyleSheet.create({
-	screen: {
+	Screen: {
 		flex: 1,
 		backgroundColor: "#EBF0DE",
 		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
 		alignItems: "center",
 		paddingHorizontal: 15,
 	},
-	container: {
+	Container: {
 		flex: 1,
 		marginVertical: 20,
 		alignItems: "center",
