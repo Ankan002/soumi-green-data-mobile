@@ -1,7 +1,7 @@
 export default {
 	expo: {
-		name: "Green Data",
-		slug: "green-data",
+		name: "Pallav",
+		slug: "pallav",
 		version: "1.0.0",
 		orientation: "portrait",
 		icon: "./assets/images/icon.png",
@@ -10,7 +10,7 @@ export default {
 		splash: {
 			image: "./assets/images/splash.png",
 			resizeMode: "contain",
-			backgroundColor: "#ffffff",
+			backgroundColor: "#EBF0DE",
 		},
 		assetBundlePatterns: ["**/*"],
 		ios: {
@@ -19,9 +19,10 @@ export default {
 		android: {
 			adaptiveIcon: {
 				foregroundImage: "./assets/images/adaptive-icon.png",
-				backgroundColor: "#ffffff",
+				backgroundColor: "#EBF0DE",
 			},
 			softwareKeyboardLayoutMode: "pan",
+			package: "tech.ankan.pallav"
 		},
 		web: {
 			bundler: "metro",
