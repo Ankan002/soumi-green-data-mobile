@@ -1,4 +1,5 @@
 import { AuthHeader } from "components/elements";
+import { SignUpContainer } from "components/sign-up";
 import { SignUpBackButton } from "components/sign-up/elements";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
@@ -16,6 +17,7 @@ const LoginScreen = () => {
 			<StatusBar style="dark" />
 			<View style={SignUpStyles.Container}>
 				<AuthHeader />
+				<SignUpContainer isSigningUp={isSigningUp} setIsSigningUp={setIsSigningUp} />
 			</View>
 		</SafeAreaView>
 	);
