@@ -9,6 +9,7 @@ const LoginContainer = () => {
 	const router = useRouter();
 
 	const [email, setEmail] = useState<string>("");
+	const [password, setPassword] = useState<string>("");
 
 	const onCreateAccountButtonClick = () => {
 		router.push("/(auth)/sign-up");
@@ -21,6 +22,7 @@ const LoginContainer = () => {
 			<Text style={styles.Title}>Let's Login</Text>
 			<ScrollView style={styles.InputContainer}>
 				<CustomTextInput value={email} onChangeText={setEmail} title="Email" keyboardType="email-address" />
+				<CustomTextInput value={password} onChangeText={setPassword} title="Password" keyboardType="default" />
 			</ScrollView>
 			<AuthButton buttonText="Login" onPress={() => console.log("login!!")} />
 
