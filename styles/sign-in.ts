@@ -16,6 +16,6 @@ export const SignInStyles = StyleSheet.create({
 		borderWidth: 2,
 		borderRadius: 40,
 		borderColor: "#000",
-		width: "100%",
+		width: Platform.OS === "android" ? "100%" : "95%",
 	},
 });
