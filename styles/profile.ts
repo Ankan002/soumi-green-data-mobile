@@ -6,5 +6,6 @@ export const ProfileStyles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: colors.primaryGreen,
 		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+		paddingHorizontal: 15,
 	},
 });
