@@ -32,7 +32,7 @@ export default function TabLayout() {
 				}}
 			/>
 			<Tabs.Screen
-				name="two"
+				name="profile"
 				options={{
 					title: "Profile",
 					tabBarIcon: ({ color }) => <MaterialCommunityIcons name="face-man-profile" color={color} size={30} />,
