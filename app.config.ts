@@ -1,3 +1,5 @@
+import "dotenv/config";
+
 export default {
 	expo: {
 		name: "Pallav",
@@ -22,11 +24,16 @@ export default {
 				backgroundColor: "#EBF0DE",
 			},
 			softwareKeyboardLayoutMode: "pan",
-			package: "tech.ankan.pallav"
+			package: "tech.ankan.pallav",
 		},
 		web: {
 			bundler: "metro",
 			favicon: "./assets/images/favicon.png",
+		},
+		extra: {
+			eas: {
+				projectId: process.env["EAS_PROJECT_ID"],
+			},
 		},
 	},
 };
