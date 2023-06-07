@@ -13,6 +13,7 @@ module.exports = function (api) {
 						components: "./components",
 						theme: "./theme",
 						constants: "./constants",
+						atoms: "./atoms",
 					},
 				},
 			],

@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, useRouter } from "expo-router";
 import { useEffect } from "react";
-import { RecoilRoot } from "recoil";
+import { RecoilRoot, useRecoilValue } from "recoil";
 import { SecularOne_400Regular } from "@expo-google-fonts/secular-one";
 import {
 	Quicksand_300Light,
@@ -21,6 +21,7 @@ import {
 	Manrope_800ExtraBold,
 } from "@expo-google-fonts/manrope";
 import { LightNavigationTheme } from "theme";
+import { authAtom } from "atoms";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -62,6 +63,17 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+	const isAuthenticated = useRecoilValue<boolean>(authAtom);
+	const router = useRouter();
+
+	useEffect(() => {
+		if (!isAuthenticated) {
+			router.replace("(auth)");
+		} else {
+			router.replace("(tabs)");
+		}
+	}, [isAuthenticated]);
+
 	return (
 		<>
 			<ThemeProvider value={LightNavigationTheme}>

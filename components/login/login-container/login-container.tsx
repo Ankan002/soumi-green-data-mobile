@@ -5,12 +5,19 @@ import { AuthButton, CustomTextInput } from "components/elements";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { colors } from "constants/colors";
+import { useSetRecoilState } from "recoil";
+import { authAtom } from "atoms";
 
 const LoginContainer = () => {
 	const router = useRouter();
 
+	const setIsAuthenticated = useSetRecoilState<boolean>(authAtom);
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
+
+	const onLoginClick = () => {
+		setIsAuthenticated(true);
+	};
 
 	const onCreateAccountButtonClick = () => {
 		router.push("/(auth)/sign-up");
@@ -23,7 +30,7 @@ const LoginContainer = () => {
 				<CustomTextInput value={email} onChangeText={setEmail} title="Email" keyboardType="email-address" />
 				<CustomTextInput value={password} onChangeText={setPassword} title="Password" keyboardType="default" />
 			</ScrollView>
-			<AuthButton buttonText="Login" onPress={() => router.replace("(tabs)")} />
+			<AuthButton buttonText="Login" onPress={onLoginClick} />
 
 			<Pressable style={styles.CreateAccountButton} onPress={onCreateAccountButtonClick}>
 				<Text style={styles.CreateAccountText}>Create New Account</Text>
