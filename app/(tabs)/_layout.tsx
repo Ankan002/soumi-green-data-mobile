@@ -1,35 +1,41 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { useColorScheme } from "react-native";
-
-import Colors from "../../constants/Colors";
-
-function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>["name"]; color: string }) {
-	return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Dimensions } from "react-native";
 
 export default function TabLayout() {
-	const colorScheme = useColorScheme();
-
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+				tabBarActiveTintColor: "#000",
+				tabBarInactiveTintColor: "#EBF0DE",
+				tabBarShowLabel: false,
+				tabBarStyle: {
+					position: "absolute",
+					width: "50%",
+					alignSelf: "center",
+					marginHorizontal:
+						(Dimensions.get("screen").width - (50 / 100) * Dimensions.get("screen").width) / 2,
+					marginBottom: 10,
+					borderRadius: 10,
+					borderWidth: 2,
+					borderTopWidth: 2,
+					alignItems: "center",
+				},
 			}}
 		>
 			<Tabs.Screen
 				name="index"
 				options={{
-					title: "Tab One",
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+					title: "Home",
+					tabBarIcon: ({ color }) => <Ionicons name="home" size={30} color={color} />,
 					headerShown: false,
 				}}
 			/>
 			<Tabs.Screen
 				name="two"
 				options={{
-					title: "Tab Two",
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+					title: "Profile",
+					tabBarIcon: ({ color }) => <MaterialCommunityIcons name="face-man-profile" color={color} size={30} />,
 					headerShown: false,
 				}}
 			/>
