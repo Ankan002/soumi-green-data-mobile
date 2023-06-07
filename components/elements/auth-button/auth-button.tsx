@@ -1,6 +1,7 @@
 import { GestureResponderEvent, Pressable, Text } from "react-native";
 import { styles } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import { colors } from "constants/colors";
 
 interface Props {
 	buttonText: string;
@@ -13,7 +14,7 @@ const AuthButton = (props: Props) => {
 	return (
 		<Pressable style={styles.LoginButton} onPress={onPress}>
 			<Text style={styles.LoginText}>{buttonText}</Text>
-			<Ionicons name="ios-caret-forward" size={25} color="#62D783" />
+			<Ionicons name="ios-caret-forward" size={25} color={colors.tertiaryGreen} />
 		</Pressable>
 	);
 };

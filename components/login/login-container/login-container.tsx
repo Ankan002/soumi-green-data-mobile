@@ -1,9 +1,10 @@
-import { View, Text, Pressable, ScrollView, KeyboardAvoidingView, Platform } from "react-native";
+import { View, Text, Pressable, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import { AuthButton, CustomTextInput } from "components/elements";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import { colors } from "constants/colors";
 
 const LoginContainer = () => {
 	const router = useRouter();
@@ -16,9 +17,7 @@ const LoginContainer = () => {
 	};
 
 	return (
-		<View
-			style={styles.Container}
-		>
+		<View style={styles.Container}>
 			<Text style={styles.Title}>Let's Login</Text>
 			<ScrollView style={styles.InputContainer}>
 				<CustomTextInput value={email} onChangeText={setEmail} title="Email" keyboardType="email-address" />
@@ -29,7 +28,7 @@ const LoginContainer = () => {
 			<Pressable style={styles.CreateAccountButton} onPress={onCreateAccountButtonClick}>
 				<Text style={styles.CreateAccountText}>Create New Account</Text>
 				<View style={styles.CreateAccountLogoContainer}>
-					<Ionicons name="ios-chevron-forward-outline" size={25} color="#000" />
+					<Ionicons name="ios-chevron-forward-outline" size={25} color={colors.black} />
 				</View>
 			</Pressable>
 		</View>

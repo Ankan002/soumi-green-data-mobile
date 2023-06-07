@@ -1,10 +1,11 @@
+import { colors } from "constants/colors";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 	Container: {
 		flex: 1,
 		width: "100%",
-		backgroundColor: "#62D783",
+		backgroundColor: colors.tertiaryGreen,
 		marginTop: 10,
 		borderRadius: 40,
 		paddingHorizontal: 20,

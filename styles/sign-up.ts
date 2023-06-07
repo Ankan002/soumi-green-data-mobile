@@ -1,10 +1,11 @@
+import { colors } from "constants/colors";
 import { Platform, StatusBar, StyleSheet } from "react-native";
 
 export const SignUpStyles = StyleSheet.create({
 	Screen: {
 		flex: 1,
 		paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-		backgroundColor: "#EBF0DE",
+		backgroundColor: colors.primaryGreen,
 		paddingHorizontal: 15,
 		alignItems: "center",
 	},
@@ -12,10 +13,10 @@ export const SignUpStyles = StyleSheet.create({
 		flex: 1,
 		marginVertical: 20,
 		alignItems: "center",
-		backgroundColor: "#C7F44D",
+		backgroundColor: colors.secondaryGreen,
 		borderWidth: 2,
 		borderRadius: 40,
-		borderColor: "#000",
+		borderColor: colors.black,
 		width: Platform.OS === "android" ? "100%" : "95%",
 	},
 	NavigationButtonContainer: {

@@ -1,5 +1,6 @@
 import { Text, TextInput, View } from "react-native";
 import { styles } from "./styles";
+import { colors } from "constants/colors";
 
 interface Props {
 	title: string;
@@ -14,7 +15,13 @@ const CustomTextInput = (props: Props) => {
 	return (
 		<View style={styles.Container}>
 			<Text style={styles.TitleText}>{title}</Text>
-			<TextInput style={styles.TextInput} value={value} onChangeText={onChangeText} keyboardType={keyboardType} cursorColor="#000" />
+			<TextInput
+				style={styles.TextInput}
+				value={value}
+				onChangeText={onChangeText}
+				keyboardType={keyboardType}
+				cursorColor={colors.black}
+			/>
 		</View>
 	);
 };
