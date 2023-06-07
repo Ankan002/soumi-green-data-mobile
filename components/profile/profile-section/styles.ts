@@ -16,5 +16,10 @@ export const styles = StyleSheet.create({
         borderColor: colors.black,
         borderRadius: 50,
         backgroundColor: colors.tertiaryGreen
+    },
+    ProfileTextContainer: {
+        flex: 1,
+        justifyContent: "center",
+        marginLeft: 10
     }
 })
