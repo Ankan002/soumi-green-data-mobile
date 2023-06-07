@@ -6,7 +6,8 @@
 		"paths": {
 			"styles/*": ["./styles/*"],
 			"assets/*": ["./assets/*"],
-			"components/*": ["./components/*"]
+			"components/*": ["./components/*"],
+			"constants/*": ["./constants/*"]
 		}
 	}
 }

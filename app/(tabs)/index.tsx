@@ -1,26 +1,13 @@
-import { StyleSheet, Text, View  } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native";
+import { HomeStyles } from "styles/home";
 
-export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-    </View>
-  );
-}
+const HomeScreen = () => {
+	return (
+		<SafeAreaView style={HomeStyles.Container}>
+			<StatusBar style="dark" />
+		</SafeAreaView>
+	);
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+export default HomeScreen;
