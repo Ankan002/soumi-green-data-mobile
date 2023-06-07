@@ -24,7 +24,7 @@ const LoginContainer = () => {
 				<CustomTextInput value={email} onChangeText={setEmail} title="Email" keyboardType="email-address" />
 				<CustomTextInput value={password} onChangeText={setPassword} title="Password" keyboardType="default" />
 			</ScrollView>
-			<AuthButton buttonText="Login" onPress={() => console.log("login!!")} />
+			<AuthButton buttonText="Login" onPress={() => router.replace("(tabs)")} />
 
 			<Pressable style={styles.CreateAccountButton} onPress={onCreateAccountButtonClick}>
 				<Text style={styles.CreateAccountText}>Create New Account</Text>
