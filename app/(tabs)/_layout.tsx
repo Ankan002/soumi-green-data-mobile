@@ -16,11 +16,11 @@ export default function TabLayout() {
 					marginHorizontal:
 						(Dimensions.get("screen").width - (50 / 100) * Dimensions.get("screen").width) / 2,
 					marginBottom: 10,
-					borderRadius: 10,
+					borderRadius: 20,
 					borderWidth: 2,
 					borderTopWidth: 2,
 					alignItems: "center",
-				},
+				}, // TODO: Re-Think Bottom Tab Navigator Styles...
 			}}
 		>
 			<Tabs.Screen
