@@ -17,6 +17,7 @@
     "@expo-google-fonts/secular-one": "^0.2.3",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
+    "axios": "^1.4.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "dotenv": "^16.1.4",
     "expo": "~48.0.15",
@@ -36,7 +37,8 @@
     "react-native-screens": "~3.20.0",
     "react-native-web": "~0.18.10",
     "react-query": "^3.39.3",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

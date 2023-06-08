@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack, useRouter } from "expo-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { RecoilRoot, useRecoilValue } from "recoil";
 import { SecularOne_400Regular } from "@expo-google-fonts/secular-one";
 import {
@@ -22,6 +22,8 @@ import {
 } from "@expo-google-fonts/manrope";
 import { LightNavigationTheme } from "theme";
 import { authAtom } from "atoms";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { verifyIsAuthenticated } from "helpers";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -46,6 +48,8 @@ export default function RootLayout() {
 		Manrope_800ExtraBold,
 	});
 
+	const reactQueryClient = new QueryClient();
+
 	useEffect(() => {
 		if (error) throw error;
 	}, [error]);
@@ -55,7 +59,9 @@ export default function RootLayout() {
 			{!loaded && <SplashScreen />}
 			{loaded && (
 				<RecoilRoot>
-					<RootLayoutNav />
+					<QueryClientProvider client={reactQueryClient}>
+						<RootLayoutNav />
+					</QueryClientProvider>
 				</RecoilRoot>
 			)}
 		</>
@@ -65,6 +71,12 @@ export default function RootLayout() {
 function RootLayoutNav() {
 	const isAuthenticated = useRecoilValue<boolean>(authAtom);
 	const router = useRouter();
+	const isMounted = useRef<boolean>(false);
+
+	const onLoad = async() => {
+		const isPreviouslyLoggedIn = await verifyIsAuthenticated();
+		if(isPreviouslyLoggedIn) router.replace("(tabs)");
+	}
 
 	useEffect(() => {
 		if (!isAuthenticated) {
@@ -73,6 +85,13 @@ function RootLayoutNav() {
 			router.replace("(tabs)");
 		}
 	}, [isAuthenticated]);
+
+	useEffect(() => {
+		if(isMounted.current) return;
+
+		isMounted.current = true;
+		onLoad();
+	}, []);
 
 	return (
 		<>
