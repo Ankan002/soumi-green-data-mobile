@@ -34,6 +34,7 @@ export default {
 			eas: {
 				projectId: process.env["EAS_PROJECT_ID"],
 			},
+			api_endpoint: process.env["API_ENDPOINT"],
 		},
 	},
 };
