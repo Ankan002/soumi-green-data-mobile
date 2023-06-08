@@ -2,7 +2,7 @@ import { ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack, useRouter } from "expo-router";
 import { useEffect, useRef } from "react";
-import { RecoilRoot, useRecoilValue } from "recoil";
+import { RecoilRoot, useRecoilState, useRecoilValue } from "recoil";
 import { SecularOne_400Regular } from "@expo-google-fonts/secular-one";
 import {
 	Quicksand_300Light,
@@ -69,14 +69,17 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-	const isAuthenticated = useRecoilValue<boolean>(authAtom);
+	const [isAuthenticated, setIsAuthenticated] = useRecoilState<boolean>(authAtom);
 	const router = useRouter();
 	const isMounted = useRef<boolean>(false);
 
-	const onLoad = async() => {
+	const onLoad = async () => {
 		const isPreviouslyLoggedIn = await verifyIsAuthenticated();
-		if(isPreviouslyLoggedIn) router.replace("(tabs)");
-	}
+		console.log(isPreviouslyLoggedIn);
+		if (isPreviouslyLoggedIn) {
+			setIsAuthenticated(true);
+		}
+	};
 
 	useEffect(() => {
 		if (!isAuthenticated) {
@@ -87,7 +90,7 @@ function RootLayoutNav() {
 	}, [isAuthenticated]);
 
 	useEffect(() => {
-		if(isMounted.current) return;
+		if (isMounted.current) return;
 
 		isMounted.current = true;
 		onLoad();

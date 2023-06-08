@@ -2,11 +2,13 @@ import { Pressable, Text } from "react-native";
 import { styles } from "./styles";
 import { useSetRecoilState } from "recoil";
 import { authAtom } from "atoms";
+import { deleteItemAsync } from "expo-secure-store";
 
 const LogoutButton = () => {
 	const setIsAuthenticated = useSetRecoilState<boolean>(authAtom);
 
-	const onLogoutClick = () => {
+	const onLogoutClick = async () => {
+		await deleteItemAsync("auth-token");
 		setIsAuthenticated(false);
 	};
 
