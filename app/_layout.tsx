@@ -75,7 +75,6 @@ function RootLayoutNav() {
 
 	const onLoad = async () => {
 		const isPreviouslyLoggedIn = await verifyIsAuthenticated();
-		console.log(isPreviouslyLoggedIn);
 		if (isPreviouslyLoggedIn) {
 			setIsAuthenticated(true);
 		}

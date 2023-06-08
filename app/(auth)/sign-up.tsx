@@ -17,7 +17,7 @@ const LoginScreen = () => {
 			<StatusBar style="dark" />
 			<View style={SignUpStyles.Container}>
 				<AuthHeader />
-				<SignUpContainer isSigningUp={isSigningUp} setIsSigningUp={setIsSigningUp} />
+				<SignUpContainer setIsSigningUp={setIsSigningUp} />
 			</View>
 		</SafeAreaView>
 	);
