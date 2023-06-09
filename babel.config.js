@@ -15,6 +15,7 @@ module.exports = function (api) {
 						constants: "./constants",
 						atoms: "./atoms",
 						helpers: "./helpers",
+						types: "./types",
 					},
 				},
 			],
