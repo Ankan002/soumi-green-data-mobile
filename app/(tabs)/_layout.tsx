@@ -13,12 +13,10 @@ export default function TabLayout() {
 	const [isAuthenticated, setIsAuthenticated] = useRecoilState<boolean>(authAtom);
 	const setUser = useSetRecoilState<User>(userAtom);
 	const setIsProfileLoading = useSetRecoilState<boolean>(userLoadingAtom);
-;
 	const { refetch: getProfileQuery, isLoading: isProfileLoading } = useQuery("get-profile", getUser, {
 		retry: 0,
 		enabled: false,
 		onSuccess: (data) => {
-			console.log(data);
 			setUser(data);
 		},
 		onError: async (error) => {
